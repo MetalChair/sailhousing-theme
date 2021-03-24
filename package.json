@@ -1,0 +1,11 @@
+{
+  "name": "sailhousing",
+  "version": "1.0.0",
+  "description": "A wp theme for sail housing solutions",
+  "main": "none",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

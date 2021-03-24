@@ -1,0 +1,58 @@
+/*
+Theme Name: Sail Housing Solutions
+Text Domain: Sail Housing
+Version: 1.0
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Description: The default sail housing solution theme
+Author: the WordPress team
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+	0. 	CSS Reset
+	1. 	Document Setup
+	2. 	Element Base
+	3. 	Helper Classes
+	4. 	Site Header
+	5. 	Menu Modal
+	6. 	Search Modal
+	7. 	Page Templates
+		a. 	Template: Cover Template
+		c. 	Template: Full Width
+	8.  Post: Archive
+	9.  Post: Single
+	10. Blocks
+	11. Entry Content
+	12. Comments
+	13. Site Pagination
+	14. Error 404
+	15. Widgets
+	16. Site Footer
+	17. Media Queries
+
+----------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	0. CSS Reset
+/* -------------------------------------------------------------------------- */
+/*	4. Site Header
+/* -------------------------------------------------------------------------- */
+.nav-bar{
+    width: 100%;
+    background-color: red;
+    height: 50px;
+}
