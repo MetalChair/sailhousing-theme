@@ -9,27 +9,24 @@ if( !function_exists('sailhousing_setup')):
 endif;
 
 function sailhousing_customize_register($wp_customize){
- 	// // Add primary color hue setting and control.
-    //  $wp_customize->add_setting(
-	// 	'bg_color',
-	// 	array(
-	// 		'default'           => 199,
-	// 		'transport'         => 'postMessage',
-	// 		'sanitize_callback' => 'absint',
-	// 	)
-	// );
-
-	// $wp_customize->add_control(
-	// 	new WP_Customize_Color_Control(
-	// 		$wp_customize,
-	// 		'bg_color',
-	// 		array(
-	// 			'description' => __( 'Apply a custom color for buttons, links, featured images, etc.', 'twentynineteen' ),
-	// 			'section'     => 'colors',
-	// 			'mode'        => 'hue',
-	// 		)
-	// 	)
-	// );
+    $wp_customize->add_setting( 'bg_color' , array(
+        'default'   => '#f4d7bc',
+        'transport' => 'refresh',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bg_color', array(
+        'label'      => __( 'Background Color', 'mytheme' ),
+        'section'    => 'colors',
+        'settings'   => 'bg_color',
+    ) ) );
+    $wp_customize->add_setting( 'nav_color' , array(
+        'default'   => '#4473c5',
+        'transport' => 'refresh',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'nav_color', array(
+        'label'      => __( 'Navigation Bar Color', 'mytheme' ),
+        'section'    => 'colors',
+        'settings'   => 'nav_color',
+    ) ) );
 }
 add_action('customize_register', 'sailhousing_customize_register' );
 
@@ -60,6 +57,16 @@ function get_custom_logo_tag(){
             echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
     }
 }
+function mytheme_customize_css()
+{
+    ?>
+         <style type="text/css">
+             body { background-color: <?php echo get_theme_mod('bg_color','#f4d7bc'); ?> }
+             .nav-bar {background-color: <?php echo get_theme_mod('nav_color'); ?>};
+         </style>
+    <?php
+}
+add_action( 'wp_head', 'mytheme_customize_css');
 add_action('wp_enqueue_scripts', 'sailhousing_add_css');
 add_action('after_setup_theme', 'sailhousing_setup');
 add_action('after_setup_theme', 'sailhousing_setup_custom_logo');

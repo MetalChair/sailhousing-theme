@@ -5,30 +5,20 @@
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap" rel="stylesheet"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Poppins&display=swap" rel="stylesheet">  
+
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class("grid-container"); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
 	<div class = "nav-container">
-		<div class = "brand-container">
-			<?php 
-				if(has_custom_logo()):
-					the_custom_logo();
-					echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
-				else:
-					echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
-				endif;
-			?>
-		</div>
-		<?php wp_nav_menu(array(
-			'container_class' => 'nav-text',
-			'items_wrap' => '%3$s'
-		));?>
+		<?php get_template_part( 'template-parts/header/nav' , 'menu'); ?>
 	</div>
 

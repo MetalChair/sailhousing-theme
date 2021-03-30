@@ -49,10 +49,151 @@ with others.
 
 /*	0. CSS Reset
 /* -------------------------------------------------------------------------- */
+body{
+	padding: 0;
+	margin: 0;
+	margin: 0 auto;
+
+}
+
+/*  1. Document Setup */
+/* -------------------------------------------------------------------------- */
+.grid-container {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 1fr;
+	grid-template-rows: 75px 1fr;
+	gap: 0px 0px;
+	grid-template-areas:
+	  "h"
+	  "b";
+	width: 100%;
+  }
+  .entry-content > *:not(.wp-block-cover){
+	padding-left: 5%;
+	padding-right: 5%;
+  }
+/*	2. Element Base
+/* -------------------------------------------------------------------------- */
+.body{
+	grid-area: b; /* body goes in grid body */
+	max-width: 1440px;
+}
+.body-container{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
 /*	4. Site Header
 /* -------------------------------------------------------------------------- */
 .nav-bar{
-    width: 100%;
-    background-color: red;
-    height: 50px;
+    width: 80%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding-left: 10%;
+	padding-right: 10%;
+	background-color:  #4473c5;
+	height: 100%;
+}
+.nav-container{
+	width: 100%;
+	grid-area: h;
+	overflow: hidden;
+	justify-content: space-around;
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+
+}
+/*Evenly space the actual texts for nav*/
+.nav-items-list{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: white;
+	margin:0;
+	flex-wrap: nowrap;
+	flex: 1;
+}
+/*Remove bullets from list items and make them expand to fill space */
+.nav-container li{
+	list-style-type: none;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+/*Right justify the navigational items in the container */
+.nav-items-container{
+	flex: 3;
+	display: flex;
+	justify-content: right;
+}
+.nav-container .custom-logo{
+	max-height: 60px;
+	max-width: 60px;
+}
+/*Set the text size and line height to get acutal "buttons" */
+.menu-item a{
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	position: relative;
+	height: 60px;
+	max-height: 60px;
+	line-height: 100%;
+}
+.menu-item:not(.current-menu-item) a{
+	color: inherit;
+}
+.menu-item > a::after{
+	position: absolute;
+	top:0;
+	left: 50%;
+	content: "";
+	border-bottom: 5px solid #f4b183;
+	width: 0%;
+	height: 98%;
+	transition: all .25s;
+}
+.current-menu-item a::after{
+	width: 100%;
+	left:0;
+
+}
+.current-menu-item a{
+	color: #f4b183;
+}
+.menu-item a:hover:after{
+	width: 100%;
+	left: 0;
+}
+.brand-container{
+	display: flex;
+	flex: 1;
+	justify-content: left;
+}
+.gothic{
+	font-family: 'Mulish', sans-serif;
+}
+.poppins{
+	font-family: 'Poppins', sans-serif;
+}
+.menu-item-has-children{
+	color: red;
+}
+.menu-item:hover > .sub-menu{
+	display: inline-block;
+	position: absolute;
+	z-index: 10;
+}
+.sub-menu{
+	display: none;
+}
+.entry-header{
+	display: none;
 }

@@ -1,22 +1,23 @@
-<?php
-get_header();
-?>
+	<?php
+	get_header();
+	?>
+	<div class = "body-container poppins">
+		<div id= "main" class="body">
+				<?php
+				if ( have_posts() ) {
 
-<div id= "main" class="body">
-		<?php
-		if ( have_posts() ) {
+					// Load posts loop.
+					while ( have_posts() ) {
+						the_post();
+						get_template_part( 'template-parts/content/content' );
+					}
 
-			// Load posts loop.
-			while ( have_posts() ) {
-				the_post();
-				get_template_part( 'template-parts/content/content' );
-			}
+				} else {
 
-		} else {
+					// If no content, include the "No posts found" template.
+					get_template_part( 'template-parts/content/content', 'none' );
 
-			// If no content, include the "No posts found" template.
-			get_template_part( 'template-parts/content/content', 'none' );
-
-		}
-		?>
-</div>
+				}
+				?>
+		</div>
+	</div>
