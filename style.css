@@ -69,10 +69,14 @@ body{
 	  "b";
 	width: 100%;
   }
-  .entry-content > *:not(.wp-block-cover){
-	padding-left: 5%;
-	padding-right: 5%;
-  }
+.entry-content > *:not(.wp-block-cover){
+padding-left: 5%;
+padding-right: 5%;
+}
+/*Give all content elements a 1em margin bottom */
+.entry-content > *{
+	margin-bottom: 1em;
+}
 /*	2. Element Base
 /* -------------------------------------------------------------------------- */
 .body{
