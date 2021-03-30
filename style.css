@@ -53,6 +53,7 @@ body{
 	padding: 0;
 	margin: 0;
 	margin: 0 auto;
+	background-color: red !important;
 
 }
 
@@ -72,6 +73,7 @@ body{
 .entry-content > *:not(.wp-block-cover){
 padding-left: 5%;
 padding-right: 5%;
+justify-content: center;
 }
 /*Give all content elements a 1em margin bottom */
 .entry-content > *{
