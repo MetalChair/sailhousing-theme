@@ -10,7 +10,7 @@ endif;
 
 function sailhousing_customize_register($wp_customize){
     $wp_customize->add_setting( 'bg_color' , array(
-        'default'   => '#f4d7bc',
+        'default'   => '#ffffff',
         'transport' => 'refresh',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bg_color', array(
@@ -61,7 +61,7 @@ function mytheme_customize_css()
 {
     ?>
          <style type="text/css">
-             body { background-color: <?php echo get_theme_mod('bg_color','#f4d7bc'); ?> }
+             body { background-color: <?php echo get_theme_mod('bg_color','#ffffff'); ?> }
              .nav-bar {background-color: <?php echo get_theme_mod('nav_color'); ?>};
          </style>
     <?php

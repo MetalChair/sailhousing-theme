@@ -74,9 +74,6 @@ padding-left: 15%;
 padding-right: 15%;
 justify-content: center;
 }
-.entry-content > * > *{
-	padding: 1em;
-}
 hr{
 	width: 33%;
 }
