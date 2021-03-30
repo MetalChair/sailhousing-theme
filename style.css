@@ -72,8 +72,12 @@ body{
 .entry-content > *:not(.wp-block-cover){
 padding-left: 15%;
 padding-right: 15%;
+margin: 5%;
 justify-content: center;
-background-color: white;
+}
+.entry-content > * > *{
+	padding-left: 1em;
+	padding-right: 1em;
 }
 hr{
 	width: 33%;
