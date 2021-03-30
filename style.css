@@ -70,9 +70,12 @@ body{
 	width: 100%;
   }
 .entry-content > *:not(.wp-block-cover){
-padding-left: 5%;
-padding-right: 5%;
+padding-left: 15%;
+padding-right: 15%;
 justify-content: center;
+}
+hr{
+	width: 33%;
 }
 /*Give all content elements a 1em margin bottom */
 .entry-content > *{
