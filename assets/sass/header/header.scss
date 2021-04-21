@@ -1,0 +1,20 @@
+/**
+* Defines styles for the sailhousing theme header
+*/
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+}
+
+/** Lay the nav pages out in rows */
+.nav-items-list{
+    display: flex;
+    flex-direction: row;
+}
+
+/** Style the logo so that it doesn't take up the entire page */
+.custom-logo{
+    height: 250px;
+    width: auto;
+}

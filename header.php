@@ -18,7 +18,5 @@
 </head>
 <body <?php body_class("grid-container"); ?>>
 <?php wp_body_open(); ?>
-	<div class = "nav-container">
-		<?php get_template_part( 'template-parts/header/nav' , 'menu'); ?>
-	</div>
+	<?php get_template_part( 'template-parts/header/nav' , 'menu'); ?>
 

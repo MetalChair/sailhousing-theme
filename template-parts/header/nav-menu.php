@@ -9,7 +9,7 @@
 
 ?>
 
-<?php if(has_nav_menu( 'primary' )): ?>
+<?php if(has_nav_menu('primary')): ?>
     <nav id = "site-navigation" class = "nav-bar">
         <?php get_template_part("template-parts/header/nav", "brand"); ?>
         <?php get_template_part("template-parts/header/nav", "items"); ?>

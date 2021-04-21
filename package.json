@@ -4,8 +4,20 @@
   "description": "A wp theme for sail housing solutions",
   "main": "none",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch" : "sass --watch ./assets/sass/style.scss ./style.css"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MetalChair/sailhousing-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MetalChair/sailhousing-theme/issues"
+  },
+  "homepage": "https://github.com/MetalChair/sailhousing-theme#readme",
+  "devDependencies": {
+    "sass": "^1.32.11"
+  }
 }
