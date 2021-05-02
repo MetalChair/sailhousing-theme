@@ -8,27 +8,6 @@ if( !function_exists('sailhousing_setup')):
     }
 endif;
 
-function sailhousing_customize_register($wp_customize){
-    $wp_customize->add_setting( 'bg_color' , array(
-        'default'   => '#ffffff',
-        'transport' => 'refresh',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bg_color', array(
-        'label'      => __( 'Background Color', 'mytheme' ),
-        'section'    => 'colors',
-        'settings'   => 'bg_color',
-    ) ) );
-    $wp_customize->add_setting( 'nav_color' , array(
-        'default'   => '#4473c5',
-        'transport' => 'refresh',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'nav_color', array(
-        'label'      => __( 'Navigation Bar Color', 'mytheme' ),
-        'section'    => 'colors',
-        'settings'   => 'nav_color',
-    ) ) );
-}
-add_action('customize_register', 'sailhousing_customize_register' );
 
 function sailhousing_setup_custom_logo(){
     $defaults = array(
@@ -45,8 +24,9 @@ function sailhousing_add_css(){
     //Add additional css files here
     wp_enqueue_style( 'sailhousing_style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 }
-function get_menu_array($current_menu){
-    return wp_get_nav_menu_items($current_menu);
+function sailhousing_add_js(){
+    //Add additional script files here
+    wp_enqueue_script( 'sailhousing_script',get_template_directory_uri() ."/assets/scripts/page_functions.js");
 }
 function get_custom_logo_tag(){
     $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -57,16 +37,7 @@ function get_custom_logo_tag(){
             echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
     }
 }
-function mytheme_customize_css()
-{
-    ?>
-         <style type="text/css">
-             body { background-color: <?php echo get_theme_mod('bg_color','#ffffff'); ?> }
-             .nav-bar {background-color: <?php echo get_theme_mod('nav_color'); ?>};
-         </style>
-    <?php
-}
-add_action( 'wp_head', 'mytheme_customize_css');
 add_action('wp_enqueue_scripts', 'sailhousing_add_css');
+add_action('wp_enqueue_scripts', 'sailhousing_add_js');
 add_action('after_setup_theme', 'sailhousing_setup');
 add_action('after_setup_theme', 'sailhousing_setup_custom_logo');

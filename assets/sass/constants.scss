@@ -1,0 +1,14 @@
+@import "./variables.scss";
+/**
+    Defines colors and widths for the sail housing solutions theme
+*/
+:root{
+    //Colors for menu element hovers
+    --menu-accent-color: #{$menu-accent-color};
+    --box-shadow-d1: #{$box-shadow-d1};
+    --box-shadow-d2: #{$box-shadow-d2};
+    --box-shadow-d3: #{$box-shadow-d3};
+    --box-shadow-d4: #{$box-shadow-d4};
+    --box-shadow-d5: #{$box-shadow-d5};
+}
+
