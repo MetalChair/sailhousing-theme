@@ -1,3 +1,4 @@
+@use "sass:color";
 @import "../variables.scss";
 
 /**
@@ -11,14 +12,9 @@
     align-items: center;
     max-height: 15%;
     width: 100%;
-    color: white;
-    background: $menu-bg-color;
-}
-
-//Added to the navbar logo after scrolling the nav off the page
-.nav-minified{
-    height: 50px !important;
-    width: 50px !important
+    color: $menu-fixed-bg-color;
+    background: $menu-default-bg-color;
+    transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /** Lay the nav pages out in rows */
@@ -32,6 +28,7 @@
     flex-wrap: wrap;
     justify-content: center;
     flex-grow: 1;
+    width: 100%;
 
 }
 .menu-all-pages-container{
@@ -63,6 +60,9 @@
     box-shadow: var(--box-shadow-d2);
     top: 0;
     z-index: 99;
+    background-color: $menu-fixed-bg-color;
+    color: $menu-default-bg-color;
+
 }
 
 /** Style menu items*/
@@ -93,23 +93,46 @@
     width: 0%;
     content: "";
 }
-.current-menu-item{
-    color: var(--menu-accent-color)
-}
-.current-menu-item::before{
-    border: 1px solid var(--menu-accent-color);
+.menu-nav-container{
     width: 100%;
-    position: absolute;
-    left: 0;
 }
-//What do we do when a menu item is hovered?
-.menu-item:hover a{
-    color: var(--menu-accent-color);
+//What do we do when a menu item is hovered and the nav isn't fixed?
+.nav-bar:not(.fix-nav) .menu-item:not(.current-menu-item):hover a{
+    color: color.adjust($menu-fixed-bg-color, $lightness: 20%);
 }
-.menu-item:hover::before{
-    border: 1px solid var(--menu-accent-color);
+.nav-bar:not(.fix-nav) .menu-item:hover::before{
+    border: 1px solid color.adjust($menu-fixed-bg-color, $lightness: 20%);
     left: 0;
     width: 100%;
+}
+.nav-bar:not(.fix-nav) .menu-item.current-menu-item{
+    color: color.adjust($menu-fixed-bg-color, $lightness: -20%);
+}
+
+.nav-bar:not(.fix-nav) .menu-item.current-menu-item::before{
+    width: 100%;
+    left: 0;
+    border: 1px solid;
+    border-color:color.adjust($menu-fixed-bg-color, $lightness: -20%);
+}
+//What do we do when a menu item is hovered and the nav ISSSS fixed?
+.nav-bar.fix-nav .menu-item:not(.current-menu-item):hover a{
+    color: color.adjust($menu-default-bg-color, $lightness: -20%);
+}
+.nav-bar.fix-nav .menu-item:hover::before{
+    border: 1px solid color.adjust($menu-default-bg-color, $lightness: -20%);
+    left: 0;
+    width: 100%;
+}
+.nav-bar.fix-nav .menu-item.current-menu-item{
+    color: color.adjust($menu-default-bg-color, $lightness: -30%);
+}
+
+.nav-bar.fix-nav .menu-item.current-menu-item::before{
+    width: 100%;
+    left: 0;
+    border: 1px solid;
+    border-color:color.adjust($menu-default-bg-color, $lightness: -30%);
 }
 //Remove the bullet points
 ul .menu-item{

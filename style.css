@@ -12,7 +12,7 @@ These are SCSS constants which will not effect the final product and are
     Defines colors and widths for the sail housing solutions theme
 */
 :root {
-  --menu-accent-color: #4472c4;
+  --menu-accent-color: #e0e0e0;
   --box-shadow-d1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   --box-shadow-d2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   --box-shadow-d3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -50,13 +50,9 @@ These are SCSS constants which will not effect the final product and are
   align-items: center;
   max-height: 15%;
   width: 100%;
-  color: white;
-  background: #4472c4;
-}
-
-.nav-minified {
-  height: 50px !important;
-  width: 50px !important;
+  color: #4472c4;
+  background: #ffffff;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /** Lay the nav pages out in rows */
@@ -70,6 +66,7 @@ These are SCSS constants which will not effect the final product and are
   flex-wrap: wrap;
   justify-content: center;
   flex-grow: 1;
+  width: 100%;
 }
 
 .menu-all-pages-container {
@@ -102,6 +99,8 @@ These are SCSS constants which will not effect the final product and are
   box-shadow: var(--box-shadow-d2);
   top: 0;
   z-index: 99;
+  background-color: #4472c4;
+  color: #ffffff;
 }
 
 /** Style menu items*/
@@ -134,25 +133,50 @@ These are SCSS constants which will not effect the final product and are
   content: "";
 }
 
-.current-menu-item {
-  color: var(--menu-accent-color);
-}
-
-.current-menu-item::before {
-  border: 1px solid var(--menu-accent-color);
+.menu-nav-container {
   width: 100%;
-  position: absolute;
-  left: 0;
 }
 
-.menu-item:hover a {
-  color: var(--menu-accent-color);
+.nav-bar:not(.fix-nav) .menu-item:not(.current-menu-item):hover a {
+  color: #92acdc;
 }
 
-.menu-item:hover::before {
-  border: 1px solid var(--menu-accent-color);
+.nav-bar:not(.fix-nav) .menu-item:hover::before {
+  border: 1px solid #92acdc;
   left: 0;
   width: 100%;
+}
+
+.nav-bar:not(.fix-nav) .menu-item.current-menu-item {
+  color: #27457b;
+}
+
+.nav-bar:not(.fix-nav) .menu-item.current-menu-item::before {
+  width: 100%;
+  left: 0;
+  border: 1px solid;
+  border-color: #27457b;
+}
+
+.nav-bar.fix-nav .menu-item:not(.current-menu-item):hover a {
+  color: #cccccc;
+}
+
+.nav-bar.fix-nav .menu-item:hover::before {
+  border: 1px solid #cccccc;
+  left: 0;
+  width: 100%;
+}
+
+.nav-bar.fix-nav .menu-item.current-menu-item {
+  color: #b3b3b3;
+}
+
+.nav-bar.fix-nav .menu-item.current-menu-item::before {
+  width: 100%;
+  left: 0;
+  border: 1px solid;
+  border-color: #b3b3b3;
 }
 
 ul .menu-item {
@@ -175,14 +199,14 @@ These are SCSS constants which will not effect the final product and are
 }
 
 /* Style href elements */
-a {
+.body a {
   font-family: "Poppins", sans-serif;
   color: #4472c4;
   text-decoration: none;
   transition: color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-a:hover {
+.body a:hover {
   color: #6b8fd0;
 }
 
