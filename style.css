@@ -199,14 +199,14 @@ These are SCSS constants which will not effect the final product and are
 }
 
 /* Style href elements */
-.body *:not(.wp-block-button) a {
+.body a:not(.wp-block-button__link) {
   font-family: "Poppins", sans-serif;
   color: #4472c4;
   text-decoration: none;
   transition: color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.body *:not(.wp-block-button) a:hover {
+.body a::not(.wp-block-button__link) {
   color: #6b8fd0;
 }
 
