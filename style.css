@@ -215,4 +215,9 @@ These are SCSS constants which will not effect the final product and are
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
+/*Supress WP page headers*/
+.entry-header {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

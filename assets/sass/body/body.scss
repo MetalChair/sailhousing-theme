@@ -23,3 +23,7 @@
 .body img{
     box-shadow: $box-shadow-d1;
 }
+/*Supress WP page headers*/
+.entry-header{
+    display: none;
+}
