@@ -9,14 +9,14 @@
 }
 
 /* Style href elements */
-a{
+.body a{
     font-family: 'Poppins', sans-serif;
-    color: $menu-accent-color;
+    color: $aref-color;
     text-decoration: none;
     transition: color .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-a:hover{
-    color: color.adjust($menu-accent-color, $lightness: +10%)
+.body a:hover{
+    color: color.adjust($aref-color, $lightness: +10%)
 }
 
 /* Give all images a little bit of depth*/

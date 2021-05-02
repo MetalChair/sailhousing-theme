@@ -2,8 +2,11 @@
 These are SCSS constants which will not effect the final product and are
 'compiled' out
 */
-$menu-accent-color: #4472c4;
-$menu-bg-color: #4472c4;
+$menu-default-bg-color: #ffffff;
+$menu-fixed-bg-color: #4472c4;
+$menu-accent-color: #e0e0e0;
+
+$aref-color: #4472c4;
  //Box shadow for material shadows
 //Dx where x is the height of the element
 $box-shadow-d1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
