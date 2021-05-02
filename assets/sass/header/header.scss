@@ -1,20 +1,120 @@
+@import "../variables.scss";
+
 /**
 * Defines styles for the sailhousing theme header
 */
 .nav-bar{
     display: flex;
     flex-direction: row;
-    margin: 1%;
+    padding-left: 1em;
+    padding-right: 1em;
+    align-items: center;
+    max-height: 15%;
+    width: 100%;
+    color: white;
+    background: $menu-bg-color;
+}
+
+//Added to the navbar logo after scrolling the nav off the page
+.nav-minified{
+    height: 50px !important;
+    width: 50px !important
 }
 
 /** Lay the nav pages out in rows */
 .nav-items-list{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    height: 100%;
+    margin:0;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-grow: 1;
+
+}
+.menu-all-pages-container{
+    width: 100%;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 /** Style the logo so that it doesn't take up the entire page */
-.custom-logo{
-    height: 250px;
+.custom-logo-link{
+    height: 150px;
     width: auto;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    padding: 5px;
+
+}
+.custom-logo{
+    width: auto;
+    height: 100%;
+}
+
+/*Minfied styles for logo and nav */
+.logo-minfied{
+    padding: 2px;
+    height: 75px;
+}
+.fix-nav{
+    position: fixed;
+    box-shadow: var(--box-shadow-d2);
+    top: 0;
+    z-index: 99;
+}
+
+/** Style menu items*/
+.menu-item{
+    text-decoration: none;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    flex-grow: 1;
+    min-height: auto;
+    position: relative;
+    text-align: center;
+}
+.menu-item > a{
+    color: inherit;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+}
+.menu-item::before{
+    transition: all .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    content: "";
+}
+.current-menu-item{
+    color: var(--menu-accent-color)
+}
+.current-menu-item::before{
+    border: 1px solid var(--menu-accent-color);
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+//What do we do when a menu item is hovered?
+.menu-item:hover a{
+    color: var(--menu-accent-color);
+}
+.menu-item:hover::before{
+    border: 1px solid var(--menu-accent-color);
+    left: 0;
+    width: 100%;
+}
+//Remove the bullet points
+ul .menu-item{
+    list-style-type: none;
+}
+.sub-menu{
+    display: none;
 }

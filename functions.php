@@ -24,6 +24,10 @@ function sailhousing_add_css(){
     //Add additional css files here
     wp_enqueue_style( 'sailhousing_style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 }
+function sailhousing_add_js(){
+    //Add additional script files here
+    wp_enqueue_script( 'sailhousing_script',get_template_directory_uri() ."/assets/scripts/page_functions.js");
+}
 function get_custom_logo_tag(){
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -34,5 +38,6 @@ function get_custom_logo_tag(){
     }
 }
 add_action('wp_enqueue_scripts', 'sailhousing_add_css');
+add_action('wp_enqueue_scripts', 'sailhousing_add_js');
 add_action('after_setup_theme', 'sailhousing_setup');
 add_action('after_setup_theme', 'sailhousing_setup_custom_logo');
