@@ -219,14 +219,14 @@ These are SCSS constants which will not effect the final product and are
 
 /*1/2 screen desktop*/
 @media only screen and (min-width: 1224px) {
-  .entry-content > .alignfull {
+  .alignfull {
     width: calc(100% + 10em);
     margin-left: -5em;
   }
 }
 /* full screen desktop */
 @media only screen and (min-width: 1824px) {
-  .entry-content > .alignfull {
+  .alignfull {
     width: 200%;
     margin-left: -50%;
   }
