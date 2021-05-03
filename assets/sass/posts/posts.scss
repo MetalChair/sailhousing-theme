@@ -1,0 +1,35 @@
+.entry-title:hover{
+    text-decoration: underline;
+}
+
+//Half screen desktop
+@media only screen and (min-width : 1224px) {
+    .entry-header{
+        margin-left: 5em;
+    }
+    .entry-content{
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+
+    .sticky-post{
+        font-size: 20px;
+        font-weight: bolder;
+    }
+}
+//Full screen desktop
+@media only screen and (min-width : 1824px) {
+    .entry-header{
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .entry-content{
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .sticky-post{
+        font-size: 20px;
+        font-weight: bolder;
+    }
+}

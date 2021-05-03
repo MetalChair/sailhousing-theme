@@ -1,11 +1,16 @@
 @use "sass:color";
 @import "../variables.scss";
 
-.body > *:not(.wp-block-cover){
-    max-width: 1280px;
-    margin: 0 auto;
-    margin-left: 4em;
-    margin-right: 4em;
+.body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.alignright{
+    float: right;
+}
+.alignleft{
+    float: left;
 }
 
 /* Style href elements that arent buttons */
@@ -23,12 +28,17 @@
 .body img{
     box-shadow: $box-shadow-d2;
 }
-/*Supress WP page headers*/
-.entry-header{
-    display: none;
+/*1/2 screen desktop*/
+@media only screen and (min-width : 1224px) {
+    .alignfull{
+        width: calc(100% + 10em);
+        margin-left: -5em;
+    }
 }
-
-.alignfull{
-    width: calc(100% + 8em);
-    margin-left: -4em;
+/* full screen desktop */
+@media only screen and (min-width : 1824px) {
+    .alignfull{
+        width: 200%;
+        margin-left: -50%;
+    }
 }

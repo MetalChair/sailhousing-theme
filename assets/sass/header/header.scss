@@ -7,14 +7,14 @@
 .nav-bar{
     display: flex;
     flex-direction: row;
-    padding-left: 1em;
-    padding-right: 1em;
     align-items: center;
     max-height: 15%;
     width: 100%;
     color: $menu-fixed-bg-color;
     background: $menu-default-bg-color;
     transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-bottom: 1px solid;
+    margin-bottom: 1%;
 }
 
 /** Lay the nav pages out in rows */
@@ -23,18 +23,14 @@
     flex-direction: row;
     align-items: center;
     height: 100%;
-    margin:0;
     text-align: center;
     flex-wrap: wrap;
     justify-content: center;
-    flex-grow: 1;
-    width: 100%;
 
 }
 .menu-all-pages-container{
     width: 100%;
-    padding-left: 2em;
-    padding-right: 2em;
+
 }
 
 /** Style the logo so that it doesn't take up the entire page */
@@ -62,7 +58,7 @@
     z-index: 99;
     background-color: $menu-fixed-bg-color;
     color: $menu-default-bg-color;
-
+    border-bottom: 0;
 }
 
 /** Style menu items*/
