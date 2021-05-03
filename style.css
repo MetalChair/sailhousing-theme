@@ -54,6 +54,11 @@ These are SCSS constants which will not effect the final product and are
   color: #4472c4;
   background: #ffffff;
   transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  justify-content: center;
+}
+
+.menu-main-nav-container {
+  width: 100%;
 }
 
 /** Lay the nav pages out in rows */
