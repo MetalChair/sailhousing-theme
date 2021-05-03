@@ -18,6 +18,7 @@ These are SCSS constants which will not effect the final product and are
   --box-shadow-d3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   --box-shadow-d4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   --box-shadow-d5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  --sail-gradient: linear-gradient(135deg, #f4b183 13%, #92baff 40%, #4472c4 68%, #37b3d2 90%);
 }
 
 /***
@@ -96,7 +97,7 @@ These are SCSS constants which will not effect the final product and are
 
 .fix-nav {
   position: fixed;
-  box-shadow: var(--box-shadow-d2);
+  box-shadow: var(--box-shadow-d3);
   top: 0;
   z-index: 99;
   background-color: #4472c4;
@@ -191,14 +192,14 @@ ul .menu-item {
 These are SCSS constants which will not effect the final product and are
 'compiled' out
 */
-.body {
+.body > *:not(.wp-block-cover) {
   max-width: 1280px;
   margin: 0 auto;
-  padding-left: 4em;
-  padding-right: 4em;
+  margin-left: 4em;
+  margin-right: 4em;
 }
 
-/* Style href elements */
+/* Style href elements that arent buttons */
 .body a:not(.wp-block-button__link) {
   font-family: "Poppins", sans-serif;
   color: #4472c4;
@@ -212,12 +213,41 @@ These are SCSS constants which will not effect the final product and are
 
 /* Give all images a little bit of depth*/
 .body img {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 /*Supress WP page headers*/
 .entry-header {
   display: none;
+}
+
+.alignfull {
+  width: calc(100% + 8em);
+  margin-left: -4em;
+}
+
+/*
+These are SCSS constants which will not effect the final product and are
+'compiled' out
+*/
+.wp-block-button > * {
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background: linear-gradient(135deg, #f4b183 13%, #92baff 40%, #4472c4 68%, #37b3d2 90%);
+  color: #202020;
+}
+
+.wp-block-button > *:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.wp-block-button:active > *:hover {
+  box-shadow: none;
+}
+
+/* Square off buttons withs square class */
+.wp-block-button.is-style-squared > * {
+  border-radius: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

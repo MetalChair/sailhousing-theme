@@ -1,14 +1,14 @@
 @use "sass:color";
 @import "../variables.scss";
 
-.body{
+.body > *:not(.wp-block-cover){
     max-width: 1280px;
     margin: 0 auto;
-    padding-left: 4em;
-    padding-right: 4em;
+    margin-left: 4em;
+    margin-right: 4em;
 }
 
-/* Style href elements */
+/* Style href elements that arent buttons */
 .body a:not(.wp-block-button__link){
     font-family: 'Poppins', sans-serif;
     color: $aref-color;
@@ -21,9 +21,14 @@
 
 /* Give all images a little bit of depth*/
 .body img{
-    box-shadow: $box-shadow-d1;
+    box-shadow: $box-shadow-d2;
 }
 /*Supress WP page headers*/
 .entry-header{
     display: none;
+}
+
+.alignfull{
+    width: calc(100% + 8em);
+    margin-left: -4em;
 }
