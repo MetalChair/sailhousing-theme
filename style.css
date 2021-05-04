@@ -251,7 +251,7 @@ These are SCSS constants which will not effect the final product and are
   color: #202020;
 }
 
-.wp-block-button {
+.wp-block-button > * {
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
