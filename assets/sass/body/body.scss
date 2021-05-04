@@ -36,6 +36,13 @@ like it */
 .body img{
     box-shadow: $box-shadow-d2;
 }
+/*Phone*/
+@media only screen and (max-width : 568px) {
+    .alignfull{
+        width: calc(100% + 1em);
+        margin-left: -1em;
+    }
+}
 /*1/2 screen desktop*/
 @media only screen and (min-width : 1224px) {
     .alignfull{

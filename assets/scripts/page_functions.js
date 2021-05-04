@@ -28,8 +28,8 @@ window.addEventListener('scroll', (event)=>{
         document.querySelector(".body")
             .classList.remove("minified-header-body")
     }
-});
 
+});
 
 function log(toLog){
     if(DEBUG){

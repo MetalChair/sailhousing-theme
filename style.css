@@ -227,6 +227,13 @@ like it */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+/*Phone*/
+@media only screen and (max-width: 568px) {
+  .alignfull {
+    width: calc(100% + 1em);
+    margin-left: -1em;
+  }
+}
 /*1/2 screen desktop*/
 @media only screen and (min-width: 1224px) {
   .alignfull {
@@ -281,6 +288,21 @@ These are SCSS constants which will not effect the final product and are
   text-decoration: underline;
 }
 
+@media screen and (max-device-width: 568px) {
+  .entry-header {
+    margin-left: 1em;
+  }
+
+  .entry-content {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .sticky-post {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+}
 @media only screen and (min-width: 1224px) {
   .entry-header {
     margin-left: 5em;
