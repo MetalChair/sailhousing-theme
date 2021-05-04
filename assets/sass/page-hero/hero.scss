@@ -1,0 +1,32 @@
+/* Defines styles for the page "hero" (the big image at the top of the homepage)
+This isn't applied to elements in wordpress by default so you need to add
+hero-animate to the css class of the hero element
+*/
+@keyframes background-change  { 
+    0%{
+        transform: scale(2) translateX(200px);
+    }
+    100%{
+        transform: translateX(0px) scale(1.5);
+
+    }
+}
+.hero-animate > img{
+    animation: background-change 10s cubic-bezier(0.075, 0.82, 0.165, 1) 1 forwards;
+}
+.hero-animate{
+    overflow: hidden;
+}
+@keyframes fade-in-text{
+    from{
+        opacity: 0;
+
+    }
+    to{
+        opacity: 1;
+    }
+}
+.wp-block-cover p{
+    opacity: 0;
+    animation: fade-in-text 1s cubic-bezier(0.075, 0.82, 0.165, 1) .5s 1 forwards;
+}
