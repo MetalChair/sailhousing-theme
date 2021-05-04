@@ -6,6 +6,9 @@
     display: flex;
     flex-direction: column;
 }
+.minified-header-body{
+    padding-top: 50px;
+}
 /* Worpress defaults each block column to have 1.75em padding-bottom. I don't
 like it */
 .wp-block-columns{

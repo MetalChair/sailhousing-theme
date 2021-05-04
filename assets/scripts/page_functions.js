@@ -16,6 +16,8 @@ window.addEventListener('scroll', (event)=>{
         document.querySelector(".custom-logo-link")
             .classList.add("logo-minfied")
         console.log("Shrinking nav")
+        document.querySelector(".body")
+            .classList.add("minifed-header-body")
     }else if(window.pageYOffset < NAV_HEIGHT && !showingFullNav){
         showingFullNav = true
         document.querySelector(".nav-bar")
@@ -23,6 +25,8 @@ window.addEventListener('scroll', (event)=>{
         document.querySelector(".custom-logo-link")
             .classList.remove("logo-minfied")
         console.log("Shrinking nav")
+        document.querySelector(".body")
+            .classList.add("minifed-header-body")
     }
 });
 
