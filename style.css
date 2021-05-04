@@ -322,7 +322,7 @@ hero-animate to the css class of the hero element
     opacity: 1;
   }
 }
-.wp-block-cover p {
+.hero-animate.wp-block-cover p {
   opacity: 0;
   animation: fade-in-text 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s 1 forwards;
 }
