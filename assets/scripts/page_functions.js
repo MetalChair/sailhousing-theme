@@ -26,7 +26,7 @@ window.addEventListener('scroll', (event)=>{
             .classList.remove("logo-minfied")
         console.log("Shrinking nav")
         document.querySelector(".body")
-            .classList.add("minified-header-body")
+            .classList.remove("minified-header-body")
     }
 });
 
