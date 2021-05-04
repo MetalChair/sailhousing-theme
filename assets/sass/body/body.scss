@@ -6,6 +6,11 @@
     display: flex;
     flex-direction: column;
 }
+/* Worpress defaults each block column to have 1.75em padding-bottom. I don't
+like it */
+.wp-block-columns{
+    padding-bottom: .75em;
+}
 .alignright{
     float: right;
 }
