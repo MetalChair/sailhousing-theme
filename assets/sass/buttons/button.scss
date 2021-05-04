@@ -8,6 +8,11 @@
 }
 .wp-block-button{
     padding: 1em;
+    /* For some godforsaken reason, wordpress wraps EVERY button in a fucking
+div that doesn't center properly. This is bad practice but I'm FORCING it to a
+flexbox alignment and centering the content */
+    display: flex !important;
+    justify-content: center;
 }
 .wp-block-button > *:hover{
     box-shadow: $box-shadow-d3;
