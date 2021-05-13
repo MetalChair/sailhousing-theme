@@ -89,20 +89,19 @@ These are SCSS constants which will not effect the final product and are
   height: 100%;
 }
 
-/*Minfied styles for logo and nav */
-.logo-minfied {
-  padding: 2px;
-  height: 75px;
+.home-text {
+  text-decoration: none;
+  padding-left: 1em;
+  color: #4472c4;
 }
 
-.fix-nav {
-  position: fixed;
-  box-shadow: var(--box-shadow-d3);
-  top: 0;
-  z-index: 99;
-  background-color: #4472c4;
-  color: #ffffff;
-  border-bottom: 0;
+.label-text {
+  max-height: 15%;
+  height: 150px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-right: 1px #4472c4 solid;
 }
 
 /** Style menu items*/
@@ -157,27 +156,6 @@ These are SCSS constants which will not effect the final product and are
   left: 0;
   border: 1px solid;
   border-color: #27457b;
-}
-
-.nav-bar.fix-nav .menu-item:not(.current-menu-item):hover > a {
-  color: #cccccc;
-}
-
-.nav-bar.fix-nav .menu-item:hover::before {
-  border: 1px solid #cccccc;
-  left: 0;
-  width: 100%;
-}
-
-.nav-bar.fix-nav .menu-item.current-menu-item {
-  color: #b3b3b3;
-}
-
-.nav-bar.fix-nav .menu-item.current-menu-item::before {
-  width: 100%;
-  left: 0;
-  border: 1px solid;
-  border-color: #b3b3b3;
 }
 
 ul .menu-item {

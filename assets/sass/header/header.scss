@@ -45,21 +45,20 @@
     width: auto;
     height: 100%;
 }
+.home-text{
+    text-decoration: none;
+    padding-left: 1em;
+    color: $menu-fixed-bg-color;
+}
+.label-text{
+    max-height: 15%;
+    height: 150px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-right: 1px $menu-fixed-bg-color solid;
+}
 
-/*Minfied styles for logo and nav */
-.logo-minfied{
-    padding: 2px;
-    height: 75px;
-}
-.fix-nav{
-    position: fixed;
-    box-shadow: var(--box-shadow-d3);
-    top: 0;
-    z-index: 99;
-    background-color: $menu-fixed-bg-color;
-    color: $menu-default-bg-color;
-    border-bottom: 0;
-}
 
 /** Style menu items*/
 .menu-item{
@@ -91,7 +90,6 @@
 .menu-nav-container{
     width: 100%;
 }
-//What do we do when a menu item is hovered and the nav isn't fixed?
 .nav-bar:not(.fix-nav) .menu-item:not(.current-menu-item):hover > a{
     color: color.adjust($menu-fixed-bg-color, $lightness: 20%);
 }
@@ -109,25 +107,6 @@
     left: 0;
     border: 1px solid;
     border-color:color.adjust($menu-fixed-bg-color, $lightness: -20%);
-}
-//What do we do when a menu item is hovered and the nav ISSSS fixed?
-.nav-bar.fix-nav .menu-item:not(.current-menu-item):hover > a{
-    color: color.adjust($menu-default-bg-color, $lightness: -20%);
-}
-.nav-bar.fix-nav .menu-item:hover::before{
-    border: 1px solid color.adjust($menu-default-bg-color, $lightness: -20%);
-    left: 0;
-    width: 100%;
-}
-.nav-bar.fix-nav .menu-item.current-menu-item{
-    color: color.adjust($menu-default-bg-color, $lightness: -30%);
-}
-
-.nav-bar.fix-nav .menu-item.current-menu-item::before{
-    width: 100%;
-    left: 0;
-    border: 1px solid;
-    border-color:color.adjust($menu-default-bg-color, $lightness: -30%);
 }
 //Remove the bullet points
 ul .menu-item{
