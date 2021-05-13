@@ -113,6 +113,7 @@ These are SCSS constants which will not effect the final product and are
   padding-right: 1em;
   padding-top: 1%;
   padding-bottom: 1%;
+  flex-basis: min-content;
   flex-grow: 1;
   min-height: auto;
   position: relative;
