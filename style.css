@@ -49,6 +49,7 @@ These are SCSS constants which will not effect the final product and are
 * Defines styles for the sailhousing theme header
 */
 .nav-bar {
+  font-size: 18px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -68,6 +69,7 @@ These are SCSS constants which will not effect the final product and are
   text-align: center;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
 }
 
 .menu-all-pages-container {
@@ -119,7 +121,6 @@ These are SCSS constants which will not effect the final product and are
 .menu-item > a {
   color: inherit;
   text-decoration: none;
-  font-size: 16px;
   font-weight: bold;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -137,7 +138,7 @@ These are SCSS constants which will not effect the final product and are
   width: 100%;
 }
 
-.nav-bar:not(.fix-nav) .menu-item:not(.current-menu-item):hover a {
+.nav-bar:not(.fix-nav) .menu-item:not(.current-menu-item):hover > a {
   color: #92acdc;
 }
 
@@ -158,7 +159,7 @@ These are SCSS constants which will not effect the final product and are
   border-color: #27457b;
 }
 
-.nav-bar.fix-nav .menu-item:not(.current-menu-item):hover a {
+.nav-bar.fix-nav .menu-item:not(.current-menu-item):hover > a {
   color: #cccccc;
 }
 
@@ -185,6 +186,39 @@ ul .menu-item {
 
 .sub-menu {
   display: none;
+}
+
+.menu-item-has-children:hover > .sub-menu {
+  display: inline-block;
+}
+
+.sub-menu {
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  right: 1%;
+  z-index: 100;
+  background-color: white;
+  border-radius: 5px;
+  min-width: 10vw;
+  box-shadow: var(--box-shadow-d1);
+  padding: 10px;
+}
+
+.sub-menu .sub-menu {
+  box-shadow: var(--box-shadow-d3);
+  position: absolute;
+  right: 100%;
+  top: -10px;
+  z-index: 110;
+}
+
+.sub-menu > li {
+  line-height: 150%;
+}
+
+.sub-menu li a {
+  color: #4472c4;
 }
 
 /*
