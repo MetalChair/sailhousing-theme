@@ -48,6 +48,7 @@
 .home-text{
     text-decoration: none;
     padding-left: 1em;
+    padding-right: 1em;
     color: $menu-fixed-bg-color;
 }
 .label-text{
@@ -57,6 +58,7 @@
     justify-content: left;
     align-items: center;
     border-right: 1px $menu-fixed-bg-color solid;
+    width: min-content;
 }
 
 

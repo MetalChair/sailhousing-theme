@@ -92,6 +92,7 @@ These are SCSS constants which will not effect the final product and are
 .home-text {
   text-decoration: none;
   padding-left: 1em;
+  padding-right: 1em;
   color: #4472c4;
 }
 
@@ -102,6 +103,7 @@ These are SCSS constants which will not effect the final product and are
   justify-content: left;
   align-items: center;
   border-right: 1px #4472c4 solid;
+  width: min-content;
 }
 
 /** Style menu items*/
