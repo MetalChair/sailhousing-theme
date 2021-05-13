@@ -7,6 +7,6 @@ body{
     font-family: 'Mulish', sans-serif;
     font-size: 20px;
 }
-.wp-block-column{
+.wp-block-column:not(:first-child){
     margin-left: 0;
 }
