@@ -161,7 +161,7 @@ ul .menu-item{
 }
 @media (max-width: 1157px){
     
-    .menu-all-pages-container{
+    .menu-main-nav-container{
         display: none;
     }
     .expand-label-container{
@@ -178,7 +178,7 @@ ul .menu-item{
     .expand-button{
         display: block;
     }
-    .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container{
+    .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container{
         display: flex;
         position: fixed;
         z-index: 9999;
