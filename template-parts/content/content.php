@@ -3,7 +3,7 @@
 	<header class="entry-header">
 		<?php
 		if ( is_sticky()) {
-			printf( '<span class="sticky-post">%s</span>' );
+			printf( '<span class="sticky-post">%s</span>', get_the_title() );
 		}
 		elseif ( is_singular() && ! is_front_page()){
 			the_title( '<h1 class="entry-title">', '</h1>' );
