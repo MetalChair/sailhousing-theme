@@ -223,6 +223,9 @@ ul .menu-item{
                 font-weight: bolder;
                 color: black;
             }
+            .expand-button *{
+                color: black;
+            }
             .menu-item{
                 padding: 0;
             }
@@ -247,5 +250,8 @@ ul .menu-item{
         border: 1px solid color.adjust($menu-fixed-bg-color, $lightness: 20%);
         left: 25%;
         width: 50%;
+    }
+    .custom-logo-link{
+        width: 75px;
     }
 }

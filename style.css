@@ -281,6 +281,9 @@ ul .menu-item {
     font-weight: bolder;
     color: black;
   }
+  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .expand-button * {
+    color: black;
+  }
   .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .menu-item {
     padding: 0;
   }
@@ -306,6 +309,10 @@ ul .menu-item {
     border: 1px solid #92acdc;
     left: 25%;
     width: 50%;
+  }
+
+  .custom-logo-link {
+    width: 75px;
   }
 }
 /*
