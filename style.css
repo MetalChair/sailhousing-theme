@@ -281,6 +281,9 @@ ul .menu-item {
     font-weight: bolder;
     color: black;
   }
+  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .menu-item {
+    padding: none;
+  }
 
   @keyframes fly-in {
     from {

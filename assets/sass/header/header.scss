@@ -223,6 +223,9 @@ ul .menu-item{
                 font-weight: bolder;
                 color: black;
             }
+            .menu-item{
+                padding: none;
+            }
         }
     }
     @keyframes fly-in{
