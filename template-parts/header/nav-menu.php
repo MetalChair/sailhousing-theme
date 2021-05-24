@@ -17,7 +17,7 @@
             <input id = "hack" type = "checkbox" class= "checkbox-expand-hack"/>
             <label for= "hack" class = "expand-label-container">
                 <div class ="expand-button">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <i class="fa fa-bars fa-3x" aria-hidden="true"></i>
 
                 </div>
                 <?php get_template_part("template-parts/header/nav", "items"); ?>

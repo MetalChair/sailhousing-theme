@@ -282,7 +282,7 @@ ul .menu-item {
     color: black;
   }
   .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .menu-item {
-    padding: none;
+    padding: 0;
   }
 
   @keyframes fly-in {
