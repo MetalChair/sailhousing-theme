@@ -247,7 +247,7 @@ ul .menu-item {
     background-color: white;
     animation: "fly-in" 0.1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
   }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container > .nav-items-list {
+  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container .nav-items-list {
     flex-direction: column;
     left: 0;
     margin: 0;
@@ -255,14 +255,14 @@ ul .menu-item {
     overflow: scroll;
     line-height: 25px;
   }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container > .nav-items-list > .menu-item {
+  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container .nav-items-list .menu-item {
     flex-basis: 45px;
     width: 100%;
     display: flex;
     flex-direction: column;
     left: 0;
   }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container > .nav-items-list > .menu-item .sub-menu {
+  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container .nav-items-list .menu-item .sub-menu {
     display: block;
     left: 0;
     width: 100%;
@@ -271,13 +271,13 @@ ul .menu-item {
     top: 0;
     padding: 0;
   }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container > .nav-items-list .menu-item::before {
+  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container .nav-items-list .menu-item::before {
     display: none;
   }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container > .nav-items-list .current-menu-item::before {
+  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container .nav-items-list .current-menu-item::before {
     display: none;
   }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container > .nav-items-list .current-menu-item {
+  .checkbox-expand-hack:checked + .expand-label-container .menu-all-pages-container .nav-items-list .current-menu-item {
     font-weight: bolder;
     color: black;
   }
