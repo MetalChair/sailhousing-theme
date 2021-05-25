@@ -61,6 +61,16 @@ These are SCSS constants which will not effect the final product and are
   transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+.nav-margin {
+  width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 /** By default, hide the expand menu button **/
 .expand-button {
   display: none;
@@ -81,10 +91,6 @@ These are SCSS constants which will not effect the final product and are
   justify-content: center;
   position: relative;
   white-space: nowrap;
-}
-
-.menu-all-pages-container {
-  width: 100%;
 }
 
 /** Style the logo so that it doesn't take up the entire page */
@@ -145,6 +151,10 @@ These are SCSS constants which will not effect the final product and are
   left: 50%;
   width: 0%;
   content: "";
+}
+
+.menu-show-button {
+  display: none;
 }
 
 .menu-nav-container {
@@ -214,78 +224,32 @@ ul .menu-item {
 }
 
 @media (max-width: 1157px) {
-  .menu-main-nav-container {
+  .menu-item {
+    padding: 0;
+    flex-basis: 50px;
+  }
+
+  .menu-all-pages-container {
+    overflow: scroll;
+  }
+
+  .body {
+    background-color: pink;
+  }
+
+  .menu-all-pages-container:not(.open) {
     display: none;
   }
 
-  .expand-label-container {
+  .menu-all-pages-container.open {
     display: block;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    user-select: none;
-  }
-
-  .checkbox-expand-hack {
-    display: none;
-  }
-
-  .expand-button {
-    display: block;
-  }
-
-  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container {
-    display: flex;
     position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: -100%;
-    flex-direction: column;
     width: 100%;
     height: 100%;
+    top: -100%;
+    left: 0;
     background-color: white;
-    animation: "fly-in" 0.1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-  }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list {
-    flex-direction: column;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    overflow: scroll;
-    line-height: 25px;
-  }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .menu-item {
-    flex-basis: 45px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    left: 0;
-  }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .menu-item .sub-menu {
-    display: block;
-    left: 0;
-    width: 100%;
-    box-shadow: none;
-    position: relative;
-    top: 0;
-    padding: 0;
-  }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .menu-item::before {
-    display: none;
-  }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .current-menu-item::before {
-    display: none;
-  }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .current-menu-item {
-    font-weight: bolder;
-    color: black;
-  }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .expand-button * {
-    color: black;
-  }
-  .checkbox-expand-hack:checked + .expand-label-container .menu-main-nav-container .nav-items-list .menu-item {
-    padding: 0;
+    animation: "fly-in" 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
   }
 
   @keyframes fly-in {
@@ -296,23 +260,46 @@ ul .menu-item {
       top: 0;
     }
   }
-  .expand-container {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 5%;
-    height: 150px;
-    align-items: center;
+  .menu-all-pages-container.open .sub-menu {
+    display: block;
+    position: relative;
+    box-shadow: none;
+    top: 0;
+    right: 0;
+    background-color: transparent;
   }
 
-  .nav-bar:not(.fix-nav) .menu-item:hover::before {
-    border: 1px solid #92acdc;
-    left: 25%;
-    width: 50%;
+  .menu-item::before {
+    border: 0 !important;
+  }
+
+  .menu-all-pages-container.open .nav-items-list {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-margin {
+    margin: 0;
+    justify-content: left;
+  }
+
+  .label-text {
+    width: 25%;
+    border-right: 0;
   }
 
   .custom-logo-link {
-    width: 75px;
+    height: 75px;
+  }
+
+  .menu-show-button {
+    display: block;
+    float: right;
+  }
+
+  .menu-show-container {
+    width: 100%;
+    margin-right: 5%;
   }
 }
 /*

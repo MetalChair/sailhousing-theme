@@ -11,17 +11,13 @@
 
 <?php if(has_nav_menu('primary')): ?>
     <nav id = "site-navigation" class = "nav-bar">
-        <?php get_template_part("template-parts/header/nav", "brand"); ?>
-        <div class = "label-text"><a class = "home-text" href = "/">Solutions for Adult Independent Living</a></div>
-        <div class = "expand-container">
-            <input id = "hack" type = "checkbox" class= "checkbox-expand-hack"/>
-            <label for= "hack" class = "expand-label-container">
-                <div class ="expand-button">
-                    <i class="fa fa-bars fa-3x" aria-hidden="true"></i>
-
-                </div>
-                <?php get_template_part("template-parts/header/nav", "items"); ?>
-            </label>
+        <div class = "nav-margin">
+            <?php get_template_part("template-parts/header/nav", "brand"); ?>
+            <div class = "label-text"><a class = "home-text" href = "/">Solutions for Adult Independent Living</a></div>
+            <div class="menu-show-container">
+                <i class="fa fa-bars fa-3x menu-show-button" aria-hidden="true">X</i>
+            </div>
+            <?php get_template_part("template-parts/header/nav", "items"); ?>
         </div>
     </nav>
 <?php endif; ?>
