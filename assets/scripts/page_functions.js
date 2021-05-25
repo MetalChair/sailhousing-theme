@@ -13,10 +13,10 @@ function ToggleMenu(){
     console.log("CFkjldaf;l")
     if(MENU_OPEN){
         MENU_OPEN = false;
-        document.querySelector(".menu-all-pages-container").classList.remove("open");
+        document.querySelector(".menu-main-nav-container").classList.remove("open");
     }else{
         MENU_OPEN = true;
-        document.querySelector(".menu-all-pages-container").classList.add("open");
+        document.querySelector(".menu-main-nav-container").classList.add("open");
     }
 }
 

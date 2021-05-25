@@ -83,7 +83,6 @@ These are SCSS constants which will not effect the final product and are
   align-items: center;
   height: 100%;
   text-align: center;
-  flex-wrap: nowrap;
   justify-content: center;
   position: relative;
   white-space: nowrap;
