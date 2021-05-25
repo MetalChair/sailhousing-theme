@@ -72,11 +72,7 @@ These are SCSS constants which will not effect the final product and are
 }
 
 /** By default, hide the expand menu button **/
-.expand-button {
-  display: none;
-}
-
-.checkbox-expand-hack {
+.menu-show-container {
   display: none;
 }
 
@@ -229,19 +225,15 @@ ul .menu-item {
     flex-basis: 50px;
   }
 
-  .menu-all-pages-container {
+  .menu-main-nav-container {
     overflow: scroll;
   }
 
-  .body {
-    background-color: pink;
-  }
-
-  .menu-all-pages-container:not(.open) {
+  .menu-main-nav-container:not(.open) {
     display: none;
   }
 
-  .menu-all-pages-container.open {
+  .menu-main-nav-container.open {
     display: block;
     position: fixed;
     width: 100%;
@@ -260,7 +252,7 @@ ul .menu-item {
       top: 0;
     }
   }
-  .menu-all-pages-container.open .sub-menu {
+  .menu-main-nav-container.open .sub-menu {
     display: block;
     position: relative;
     box-shadow: none;
@@ -273,7 +265,7 @@ ul .menu-item {
     border: 0 !important;
   }
 
-  .menu-all-pages-container.open .nav-items-list {
+  .menu-main-nav-container.open .nav-items-list {
     flex-direction: column;
     padding: 0;
   }
@@ -298,6 +290,7 @@ ul .menu-item {
   }
 
   .menu-show-container {
+    display: block;
     width: 100%;
     margin-right: 5%;
   }
