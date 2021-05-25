@@ -225,6 +225,7 @@ ul .menu-item {
   }
 
   .menu-main-nav-container {
+    z-index: 9999;
     overflow: scroll;
   }
 

@@ -38,7 +38,6 @@
     align-items: center;
     height: 100%;
     text-align: center;
-    flex-wrap: nowrap;
     justify-content: center;
     position: relative;
     white-space: nowrap;
@@ -170,6 +169,7 @@ ul .menu-item{
         flex-basis: 50px;
     }
     .menu-main-nav-container{
+        z-index: 9999;
         overflow: scroll;
     }
     .menu-main-nav-container:not(.open){
