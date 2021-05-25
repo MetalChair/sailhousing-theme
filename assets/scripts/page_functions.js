@@ -23,7 +23,7 @@ function ToggleMenu(){
 document.addEventListener("DOMContentLoaded", (event) => {
     document.querySelector(".menu-show-button").addEventListener("click", ()=>{
         ToggleMenu();
-        document.querySelector(".menu-all-pages-container").addEventListener("click", ToggleMenu);
+        document.querySelector(".menu-main-nav-container").addEventListener("click", ToggleMenu);
     });
 });
 
