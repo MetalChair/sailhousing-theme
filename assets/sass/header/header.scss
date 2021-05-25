@@ -27,7 +27,7 @@
 }
 
 /** By default, hide the expand menu button **/
-.menu-show-button{
+.menu-show-container{
     display: none;
 }
 
@@ -227,6 +227,7 @@ ul .menu-item{
         float: right;
     }
     .menu-show-container{
+        display: block;
         width: 100%;
         margin-right: 5%;
     }
