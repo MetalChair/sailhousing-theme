@@ -15,7 +15,7 @@
             <?php get_template_part("template-parts/header/nav", "brand"); ?>
             <div class = "label-text"><a class = "home-text" href = "/">Solutions for Adult Independent Living</a></div>
             <div class="menu-show-container">
-                <i class="fa fa-bars fa-3x menu-show-button" aria-hidden="true"></i>
+                <i class="fa fa-bars fa-3x menu-show-button" aria-hidden="true">a</i>
             </div>
             <?php get_template_part("template-parts/header/nav", "items"); ?>
         </div>

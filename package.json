@@ -5,7 +5,8 @@
   "main": "none",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "CHOKIDAR_USEPOLLING=true sass --watch ./assets/sass/style.scss ./style.css"
+    "watch": "CHOKIDAR_USEPOLLING=true sass --use autoprefixer --watch ./assets/sass/style.scss ./style.css",
+    "prefix" : "postcss --use autoprefixer -o style.css style.css"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +20,9 @@
   "homepage": "https://github.com/MetalChair/sailhousing-theme#readme",
   "devDependencies": {
     "sass": "^1.32.12"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss-cli": "^8.3.1"
   }
 }

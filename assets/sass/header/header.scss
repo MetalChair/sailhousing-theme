@@ -40,8 +40,6 @@
     text-align: center;
     justify-content: center;
     position: relative;
-    white-space: nowrap;
-
 }
 /** Style the logo so that it doesn't take up the entire page */
 .custom-logo-link{
@@ -168,14 +166,14 @@ ul .menu-item{
         padding: 0;
         flex-basis: 50px;
     }
-    .menu-main-nav-container{
+    .menu-container{
         z-index: 9999;
         overflow: scroll;
     }
-    .menu-main-nav-container:not(.open){
+    .menu-container:not(.open){
         display: none;
     }
-    .menu-main-nav-container.open{
+    .menu-container.open{
         display: block;
         position: fixed;
         width: 100%;
@@ -192,7 +190,7 @@ ul .menu-item{
             top: 0;
         }
     }
-    .menu-main-nav-container.open .sub-menu{
+    .menu-container.open .sub-menu{
         display: block;
         position: relative;
         box-shadow: none;
@@ -203,7 +201,7 @@ ul .menu-item{
     .menu-item::before{
         border: 0 !important;
     }
-    .menu-main-nav-container.open .nav-items-list{
+    .menu-container.open .nav-items-list{
         flex-direction: column;
         padding: 0;
 
@@ -213,7 +211,6 @@ ul .menu-item{
         justify-content: left ;
     }
     .label-text{
-        width: 25%;
         border-right: 0;
     }
     .custom-logo-link{
@@ -226,6 +223,6 @@ ul .menu-item{
     .menu-show-container{
         display: block;
         width: 100%;
-        margin-right: 5%;
+        margin-right: 10%;
     }
 }

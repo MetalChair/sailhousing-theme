@@ -1,6 +1,11 @@
 @use "sass:color";
 @import "../variables.scss";
-
+:root{
+    margin: 0 auto;
+}
+body{
+    width: 100%;
+}
 .body{
     width: 100%;
     display: flex;
@@ -35,6 +40,10 @@ like it */
 /* Give all images a little bit of depth*/
 .body img{
     box-shadow: $box-shadow-d2;
+}
+
+.post{
+    overflow-x: scroll;
 }
 /*Phone*/
 @media only screen and (max-width : 568px) {

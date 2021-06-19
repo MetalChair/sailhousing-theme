@@ -10,20 +10,19 @@ function log(toLog){
 var MENU_OPEN = false;
 
 function ToggleMenu(){
-    console.log("CFkjldaf;l")
     if(MENU_OPEN){
         MENU_OPEN = false;
-        document.querySelector(".menu-main-nav-container").classList.remove("open");
+        document.querySelector(".menu-container").classList.remove("open");
     }else{
         MENU_OPEN = true;
-        document.querySelector(".menu-main-nav-container").classList.add("open");
+        document.querySelector(".menu-container").classList.add("open");
     }
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
     document.querySelector(".menu-show-button").addEventListener("click", ()=>{
         ToggleMenu();
-        document.querySelector(".menu-main-nav-container").addEventListener("click", ToggleMenu);
+        document.querySelector(".menu-container").addEventListener("click", ToggleMenu);
     });
 });
 
