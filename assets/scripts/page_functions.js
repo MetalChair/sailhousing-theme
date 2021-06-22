@@ -7,19 +7,6 @@ function log(toLog){
     }
 }
 
-add_filter('is_logged_in', 'add_menu_conditions' );
- 
-function add_menu_conditions( $conditions ) {
-  $conditions[] = array(
-    'name'    =>  'Is Logged In',
-    'condition' =>  function($item) {
-      return is_user_logged_in();
-    }
-  );
- 
-  return $conditions;
-}
-
 var MENU_OPEN = false;
 
 function ToggleMenu(){

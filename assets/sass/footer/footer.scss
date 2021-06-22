@@ -1,6 +1,10 @@
 footer{
     width: 100%;
 }
+@media only screen and (max-width : 568px) {
+    flex-direction: column;
+}
+
 .footer-content{
     display: flex;
     flex-direction: row;
