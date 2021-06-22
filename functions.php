@@ -52,7 +52,7 @@ function get_custom_logo_tag(){
     }
 }
 
-add_filter( 'wp_nav_menu_objects', function( array $items, array $args ) {
+add_filter( 'wp_nav_menu_objects', function( array $items,  stdClass $args ) {
 
     return array_filter( $items, function( $item ) {
         if ($item->title === "My Profile" && !is_user_logged_in()) return false;
