@@ -1,20 +1,577 @@
-/* Error: expected "{".
- *   ,
- * 5 |     flex-direction: column;
- *   |                           ^
- *   '
- *   assets/sass/footer/footer.scss 5:27  @use
- *   assets/sass/style.scss 11:1          root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a   \2577 \a 5 \2502      flex-direction: column;\d\a   \2502                            ^\a   \2575 \a   assets/sass/footer/footer.scss 5:27  @use\a   assets/sass/style.scss 11:1          root stylesheet';
+@import url("https://fonts.googleapis.com/css2?family=Mulish&family=Poppins&display=swap");
+/**
+    The following is style definitions for the sail housing website.
+    Get in contact with us @ info@sailhousingsolutions.org
+    All rights reserved, 2021
+*/
+/*
+These are SCSS constants which will not effect the final product and are
+'compiled' out
+*/
+/**
+    Defines colors and widths for the sail housing solutions theme
+*/
+:root {
+  --menu-accent-color: #e0e0e0;
+  --box-shadow-d1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --box-shadow-d2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --box-shadow-d3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  --box-shadow-d4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  --box-shadow-d5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  --sail-gradient: linear-gradient(135deg, #f4b183 13%, #92baff 40%, #4472c4 68%, #37b3d2 90%);
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVucHJlZml4ZWQtc3R5bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7MkRBTTJEOztBQUUzRDtFQUNFOzZDQUMyQztFQUMzQyxnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsOEJBQThCO0VBQzlCLDRPQUE0TztBQUM5TyIsImZpbGUiOiJzdHlsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBFcnJvcjogZXhwZWN0ZWQgXCJ7XCIuXG4gKiAgICxcbiAqIDUgfCAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICogICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgXlxuICogICAnXG4gKiAgIGFzc2V0cy9zYXNzL2Zvb3Rlci9mb290ZXIuc2NzcyA1OjI3ICBAdXNlXG4gKiAgIGFzc2V0cy9zYXNzL3N0eWxlLnNjc3MgMTE6MSAgICAgICAgICByb290IHN0eWxlc2hlZXQgKi9cblxuYm9keTo6YmVmb3JlIHtcbiAgZm9udC1mYW1pbHk6IFwiU291cmNlIENvZGUgUHJvXCIsIFwiU0YgTW9ub1wiLCBNb25hY28sIEluY29uc29sYXRhLCBcIkZpcmEgTW9ub1wiLFxuICAgICAgXCJEcm9pZCBTYW5zIE1vbm9cIiwgbW9ub3NwYWNlLCBtb25vc3BhY2U7XG4gIHdoaXRlLXNwYWNlOiBwcmU7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwYWRkaW5nOiAxZW07XG4gIG1hcmdpbi1ib3R0b206IDFlbTtcbiAgYm9yZGVyLWJvdHRvbTogMnB4IHNvbGlkIGJsYWNrO1xuICBjb250ZW50OiAnRXJyb3I6IGV4cGVjdGVkIFwie1wiLlxcYSAgIFxcMjU3NyBcXGEgNSBcXDI1MDIgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xcZFxcYSAgIFxcMjUwMiAgICAgICAgICAgICAgICAgICAgICAgICAgICBeXFxhICAgXFwyNTc1IFxcYSAgIGFzc2V0cy9zYXNzL2Zvb3Rlci9mb290ZXIuc2NzcyA1OjI3ICBAdXNlXFxhICAgYXNzZXRzL3Nhc3Mvc3R5bGUuc2NzcyAxMToxICAgICAgICAgIHJvb3Qgc3R5bGVzaGVldCc7XG59XG4iXX0= */
+/***
+Use these rules to use the fonts:
+    font-family: 'Mulish', sans-serif;
+
+    font-family: 'Poppins', sans-serif;
+**/
+/**
+Defines styling that removes certain annoying browser "defaults" IE: auto margin
+on body
+**/
+body {
+  margin: 0;
+  font-family: "Mulish", sans-serif;
+  font-size: 20px;
+}
+
+@media (max-width: 1157px) {
+  body {
+    font-size: 14px;
+  }
+}
+.wp-block-column:not(:first-child) {
+  margin-left: 0;
+}
+
+/*
+These are SCSS constants which will not effect the final product and are
+'compiled' out
+*/
+/**
+* Defines styles for the sailhousing theme header
+*/
+.nav-bar {
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-height: 15%;
+  width: 100%;
+  justify-content: center !important;
+  color: #2c4f8c;
+  background: #ffffff;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.nav-margin {
+  width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/** By default, hide the expand menu button **/
+.menu-show-container {
+  display: none;
+}
+
+/** Lay the nav pages out in rows */
+.nav-items-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+}
+
+/** Style the logo so that it doesn't take up the entire page */
+.custom-logo-link {
+  height: 150px;
+  width: auto;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  padding: 5px;
+}
+
+.custom-logo {
+  width: auto;
+  height: 100%;
+}
+
+.home-text {
+  text-decoration: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: #2c4f8c;
+}
+
+.label-text {
+  max-height: 15%;
+  height: 150px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-right: 1px #2c4f8c solid;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+/** Style menu items*/
+.menu-item {
+  text-decoration: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  flex-basis: min-content;
+  flex-basis: 150px;
+  min-height: auto;
+  position: relative;
+  text-align: center;
+}
+
+.menu-item > a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-item::before {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  content: "";
+}
+
+.menu-show-button {
+  display: none;
+}
+
+.menu-nav-container {
+  width: 100%;
+}
+
+.nav-bar:not(.fix-nav) .menu-item:not(.current-menu-item):hover > a {
+  color: #557fc9;
+}
+
+.nav-bar:not(.fix-nav) .menu-item:hover::before {
+  border: 1px solid #557fc9;
+  left: 0;
+  width: 100%;
+}
+
+.nav-bar:not(.fix-nav) .menu-item.current-menu-item {
+  color: #14233e;
+}
+
+.nav-bar:not(.fix-nav) .menu-item.current-menu-item::before {
+  width: 100%;
+  left: 0;
+  border: 1px solid;
+  border-color: #14233e;
+}
+
+ul .menu-item {
+  list-style-type: none;
+}
+
+.sub-menu {
+  display: none;
+}
+
+.menu-item-has-children:hover > .sub-menu {
+  display: inline-block;
+}
+
+.sub-menu {
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  right: 1%;
+  z-index: 100;
+  background-color: white;
+  border-radius: 5px;
+  min-width: 10vw;
+  box-shadow: var(--box-shadow-d1);
+  padding: 10px;
+}
+
+.sub-menu .sub-menu {
+  box-shadow: var(--box-shadow-d3);
+  position: absolute;
+  right: 100%;
+  top: -10px;
+  z-index: 110;
+}
+
+.sub-menu > li {
+  line-height: 150%;
+}
+
+.sub-menu li a {
+  color: #2c4f8c;
+}
+
+@media (max-width: 1157px) {
+  .menu-item {
+    padding: 0;
+    flex-basis: 50px;
+  }
+
+  .menu-container {
+    z-index: 9999;
+    overflow: scroll;
+  }
+
+  .menu-container:not(.open) {
+    display: none;
+  }
+
+  .menu-container.open {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    background-color: white;
+    -webkit-animation: "fly-in" 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            animation: "fly-in" 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  }
+
+  @-webkit-keyframes fly-in {
+    from {
+      top: -100%;
+    }
+    to {
+      top: 0;
+    }
+  }
+
+  @keyframes fly-in {
+    from {
+      top: -100%;
+    }
+    to {
+      top: 0;
+    }
+  }
+  .menu-container.open .sub-menu {
+    display: block;
+    position: relative;
+    box-shadow: none;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+  }
+
+  .menu-item::before {
+    border: 0 !important;
+  }
+
+  .menu-container.open .nav-items-list {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-margin {
+    margin: 0;
+    justify-content: left;
+  }
+
+  .label-text {
+    border-right: 0;
+  }
+
+  .custom-logo-link {
+    height: 75px;
+  }
+
+  .menu-show-button {
+    display: block;
+    float: right;
+  }
+
+  .menu-show-container {
+    display: block;
+    margin-right: 10%;
+  }
+
+  .label-text {
+    display: none;
+  }
+}
+/*
+These are SCSS constants which will not effect the final product and are
+'compiled' out
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  width: 100%;
+}
+
+.body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.minified-header-body {
+  padding-top: 50px;
+}
+
+/* Worpress defaults each block column to have 1.75em padding-bottom. I don't
+like it */
+.wp-block-columns {
+  margin-bottom: 0.75em;
+}
+
+.alignright {
+  float: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+/* Style href elements that arent buttons */
+.body a:not(.wp-block-button__link) {
+  font-family: "Poppins", sans-serif;
+  color: #4472c4;
+  text-decoration: none;
+  transition: color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.body a::not(.wp-block-button__link) {
+  color: #6b8fd0;
+}
+
+/* Give all images a little bit of depth*/
+.body img {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/*Phone*/
+@media only screen and (max-width: 568px) {
+  .alignfull {
+    width: calc(100% + 1em);
+    margin-left: -1em;
+  }
+}
+/*1/2 screen desktop*/
+@media only screen and (min-width: 1224px) {
+  .alignfull {
+    width: calc(100% + 10em);
+    margin-left: -5em;
+  }
+}
+/* full screen desktop */
+@media only screen and (min-width: 1824px) {
+  .alignfull {
+    width: 200%;
+    margin-left: -50%;
+  }
+}
+/*
+These are SCSS constants which will not effect the final product and are
+'compiled' out
+*/
+.wp-block-button:not(.is-style-outline) > * {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background: linear-gradient(135deg, #f4b183 13%, #92baff 40%, #4472c4 68%, #37b3d2 90%);
+  color: #202020;
+}
+
+.wp-block-button > * {
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.wp-block-button {
+  padding: 1em;
+  /* For some godforsaken reason, wordpress wraps EVERY button in a fucking
+  div that doesn't center properly. This is bad practice but I'm FORCING it to a
+  flexbox alignment and centering the content */
+  display: flex !important;
+  justify-content: center;
+}
+
+.wp-block-button > *:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.wp-block-button:active > *:hover {
+  box-shadow: none;
+}
+
+/* Square off buttons withs square class */
+.wp-block-button.is-style-squared > * {
+  border-radius: 0;
+}
+
+.entry-title:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-device-width: 568px) {
+  .entry-header {
+    margin-left: 1em;
+  }
+
+  .entry-content {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .sticky-post {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .entry-header {
+    margin-left: 5em;
+  }
+
+  .entry-content {
+    margin-left: 5em;
+    margin-right: 5em;
+  }
+
+  .sticky-post {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+}
+@media only screen and (min-width: 1824px) {
+  .entry-header {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  .entry-content {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  .sticky-post {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+}
+/* Defines styles for the page "hero" (the big image at the top of the homepage)
+This isn't applied to elements in wordpress by default so you need to add
+hero-animate to the css class of the hero element
+*/
+@-webkit-keyframes background-change {
+  0% {
+    transform: scale(2) translateX(200px);
+  }
+  100% {
+    transform: translateX(0px) scale(1.5);
+  }
+}
+@keyframes background-change {
+  0% {
+    transform: scale(2) translateX(200px);
+  }
+  100% {
+    transform: translateX(0px) scale(1.5);
+  }
+}
+.hero-animate > img {
+  -webkit-animation: background-change 10s cubic-bezier(0.075, 0.82, 0.165, 1) 1 forwards;
+          animation: background-change 10s cubic-bezier(0.075, 0.82, 0.165, 1) 1 forwards;
+}
+
+.hero-animate {
+  overflow: hidden;
+}
+
+@-webkit-keyframes fade-in-text {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-text {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hero-animate.wp-block-cover p {
+  opacity: 0;
+  -webkit-animation: fade-in-text 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s 1 forwards;
+          animation: fade-in-text 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s 1 forwards;
+}
+
+footer {
+  width: 100%;
+}
+
+@media only screen and (max-width: 568px) {
+  .footer-content {
+    flex-direction: column;
+  }
+}
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+.footer-content > .col {
+  flex-basis: 33%;
+  flex-grow: 0;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.col:first-child {
+  text-align: left;
+}
+
+.col:last-child {
+  text-align: right;
+}
+
+.footer-nav-items .menu-item {
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.footer-nav-items {
+  padding: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0cy9zYXNzL2luY2x1ZGVzL2ZvbnRzLnNjc3MiLCJhc3NldHMvc2Fzcy9jb21tZW50LWhlYWRlci9jb21tZW50LnNjc3MiLCJhc3NldHMvc2Fzcy92YXJpYWJsZXMuc2NzcyIsImFzc2V0cy9zYXNzL2NvbnN0YW50cy5zY3NzIiwidW5wcmVmaXhlZC1zdHlsZS5jc3MiLCJhc3NldHMvc2Fzcy9kZWZhdWx0cy5zY3NzIiwiYXNzZXRzL3Nhc3MvaGVhZGVyL2hlYWRlci5zY3NzIiwiYXNzZXRzL3Nhc3MvYm9keS9ib2R5LnNjc3MiLCJhc3NldHMvc2Fzcy9idXR0b25zL2J1dHRvbi5zY3NzIiwiYXNzZXRzL3Nhc3MvcG9zdHMvcG9zdHMuc2NzcyIsImFzc2V0cy9zYXNzL3BhZ2UtaGVyby9oZXJvLnNjc3MiLCJhc3NldHMvc2Fzcy9mb290ZXIvZm9vdGVyLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQVEsMEZBQUE7QUNBUjs7OztDQUFBO0FDQUE7OztDQUFBO0FDQ0E7O0NBQUE7QUFHQTtFQUVJLDRCQUFBO0VBQ0EsNkVBQUE7RUFDQSw2RUFBQTtFQUNBLCtFQUFBO0VBQ0EsaUZBQUE7RUFDQSxnRkFBQTtFQUNBLDRGQUFBO0FDU0o7O0FKbkJBOzs7OztFQUFBO0FLRkE7OztFQUFBO0FBSUE7RUFDSSxTQUFBO0VBQ0EsaUNBQUE7RUFDQSxlQUFBO0FEOEJKOztBQzVCQTtFQUNJO0lBQ0ksZUFBQTtFRCtCTjtBQUNGO0FDNUJBO0VBQ0ksY0FBQTtBRDhCSjs7QUY5Q0E7OztDQUFBO0FJR0E7O0NBQUE7QUFHQTtFQUNJLGVBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtFQUNBLGVBQUE7RUFDQSxXQUFBO0VBQ0Esa0NBQUE7RUFDQSxjSlRrQjtFSVVsQixtQkpYb0I7RUlZcEIsd0RBQUE7QUZrREo7O0FFaERBO0VBQ0ksV0FBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLG1CQUFB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 */
