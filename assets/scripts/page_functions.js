@@ -7,17 +7,17 @@ function log(toLog){
     }
 }
 
-add_filter('is_logged_in', 'add_menu_conditions' );
+add_filter('wp_setup_nav_menu', 'add_menu_conditions' );
  
-function add_menu_conditions( $conditions ) {
-  $conditions[] = array(
-    'name'    =>  'Is Logged In',
-    'condition' =>  function($item) {
-      return is_user_logged_in();
-    }
-  );
+function add_menu_conditions( $item ) {
+  if ($item->title === "My Profile" || $item->title === "Logout") {
+    $item->_invalid = !is_user_logged_in();
+  }
+  if ($item->title === "Login" || $item->title === "Join SAIL") {
+    $item->_invalid = is_user_logged_in();
+  }
  
-  return $conditions;
+  return $item;
 }
 
 var MENU_OPEN = false;
