@@ -222,7 +222,9 @@ ul .menu-item{
     }
     .menu-show-container{
         display: block;
-        width: 100%;
         margin-right: 10%;
+    }
+    .label-text{
+        display: none;
     }
 }

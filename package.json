@@ -5,8 +5,8 @@
   "main": "none",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "CHOKIDAR_USEPOLLING=true sass --watch ./assets/sass/style.scss ./style.css",
-    "prefix": "postcss --use autoprefixer -o style.css style.css"
+    "watch": "CHOKIDAR_USEPOLLING=true sass --watch ./assets/sass/style.scss ./unprefixed-style.css",
+    "prefix": "postcss --use autoprefixer -o style.css unprefixed-style.css"
   },
   "author": "",
   "license": "ISC",

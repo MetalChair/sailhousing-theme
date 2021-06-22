@@ -1,7 +1,12 @@
 @use "sass:color";
 @import "../variables.scss";
-:root{
-    margin: 0 auto;
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
 }
 body{
     width: 100%;
