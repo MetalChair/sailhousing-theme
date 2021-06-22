@@ -5,8 +5,8 @@
   "main": "none",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "CHOKIDAR_USEPOLLING=true sass --use autoprefixer --watch ./assets/sass/style.scss ./style.css",
-    "prefix" : "postcss --use autoprefixer -o style.css style.css"
+    "watch": "CHOKIDAR_USEPOLLING=true sass --watch ./assets/sass/style.scss ./style.css",
+    "prefix": "postcss --use autoprefixer -o style.css style.css"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "autoprefixer": "^10.2.6",
-    "postcss-cli": "^8.3.1"
+    "postcss-cli": "^8.3.1",
+    "postcss-loader": "^6.1.0",
+    "webpack-cli": "^4.7.2"
   }
 }

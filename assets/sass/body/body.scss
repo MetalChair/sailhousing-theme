@@ -41,10 +41,6 @@ like it */
 .body img{
     box-shadow: $box-shadow-d2;
 }
-
-.post{
-    overflow-x: scroll;
-}
 /*Phone*/
 @media only screen and (max-width : 568px) {
     .alignfull{
