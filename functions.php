@@ -52,13 +52,17 @@ function get_custom_logo_tag(){
     }
 }
 
-add_filter('wp_setup_nav_menu', function( \stdClass $item ) {
-    if ($item->title === "My Profile") {
-        $item->_invalid = !is_user_logged_in();
-    }
+add_filter( 'wp_nav_menu_objects', function( array $items, array $args ) {
 
-    return $item;
-} );
+    return array_filter( $items, function( $item ) {
+        if ($item->title === "My Profile" && !is_user_logged_in()) return false;
+        if ($item->title === "Logout" && !is_user_logged_in()) return false;
+        if ($item->title === "Login" && is_user_logged_in()) return false;
+        if ($item->title === "Join SAIL" && is_user_logged_in()) return false;
+        return true;
+    } );
+
+}, 10, 2 );
 
 add_action('wp_enqueue_scripts', 'sailhousing_add_css');
 add_action('wp_enqueue_scripts', 'sailhousing_add_js');
