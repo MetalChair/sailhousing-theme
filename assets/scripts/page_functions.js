@@ -7,18 +7,14 @@ function log(toLog){
     }
 }
 
-add_filter('wp_setup_nav_menu', 'add_menu_conditions' );
- 
-function add_menu_conditions( $item ) {
-  if ($item->title === "My Profile" || $item->title === "Logout") {
-    $item->_invalid = !is_user_logged_in();
-  }
-  if ($item->title === "Login" || $item->title === "Join SAIL") {
-    $item->_invalid = is_user_logged_in();
-  }
- 
-  return $item;
-}
+add_filter('wp_nav_menu_objects', function( array $items, array $args ) {
+
+    return array_filter( $items, function( $item ) {
+        if ($item->url === '/register' && !is_user_logged_in()) return true;
+        if ($item->url === '/user' && is_user_logged_in()) return true;
+    } );
+
+}, 10, 2 );
 
 var MENU_OPEN = false;
 
