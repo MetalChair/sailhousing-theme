@@ -3,7 +3,10 @@ if( !function_exists('sailhousing_setup')):
     function sailhousing_setup(){
         //Register setting for primary menu
         register_nav_menus( array(
-            'primary' => __('Primary Menu', 'sailhousing')
+            'primary' => __('Primary Menu', 'sailhousing'),
+        ));
+        register_nav_menus( array(
+            'secondary' => __('Footer Menu', 'sailhousing')
         ));
     }
 endif;
@@ -19,6 +22,17 @@ function sailhousing_setup_custom_logo(){
        'unlink-homepage-logo' => true, 
         );
     add_theme_support( 'custom-logo', $defaults );
+}
+function sailhousing_init_widgets(){
+    register_sidebar( array(
+        'name' => __("Footer Widget", "sailhousing"),
+        "id" => "footer-bar",
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 }
 function sailhousing_add_css(){
     //Add additional css files here
@@ -39,5 +53,6 @@ function get_custom_logo_tag(){
 }
 add_action('wp_enqueue_scripts', 'sailhousing_add_css');
 add_action('wp_enqueue_scripts', 'sailhousing_add_js');
+add_action('widgets_init', 'sailhousing_init_widgets');
 add_action('after_setup_theme', 'sailhousing_setup');
 add_action('after_setup_theme', 'sailhousing_setup_custom_logo');
