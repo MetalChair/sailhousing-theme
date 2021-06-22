@@ -1,18 +1,5 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_sticky()) {
-			printf( '<span class="sticky-post">%s</span>', get_the_title() );
-		}
-		elseif ( is_singular() && ! is_front_page()){
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		}
-		elseif(! is_front_page()){
-			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-		}
-		?>
-	</header><!-- .entry-header -->
 
 
 	<div class="entry-content">
