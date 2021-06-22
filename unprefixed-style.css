@@ -37,10 +37,6 @@ body {
   font-size: 20px;
 }
 
-.body * {
-  max-width: 100%;
-}
-
 @media (max-width: 1157px) {
   body {
     font-size: 14px;
