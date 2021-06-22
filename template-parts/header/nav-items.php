@@ -4,7 +4,8 @@
     $menu = wp_nav_menu(array(
         "menu" => "primary",
         "menu_class" => "nav-items-list",
-        "container_class" => "menu-container"
+        "container_class" => "menu-container",
+        "theme_location" => "primary"
     ));
  
 ;?>

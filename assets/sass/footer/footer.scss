@@ -1,0 +1,33 @@
+footer{
+    width: 100%;
+}
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+.footer-content > .col{
+    flex-basis: 33%;
+    flex-grow: 0;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.col:first-child{
+    text-align: left;
+}
+.col:last-child{
+    text-align: right;
+}
+.footer-nav-items .menu-item{
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0;
+}
+.footer-nav-items{
+    padding: 0;
+    margin: 0;
+}
