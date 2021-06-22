@@ -62,7 +62,7 @@ function add_menu_conditions( $conditions ) {
     
     return $conditions;
 }
-add_filter('is_logged_in', 'add_menu_conditions' );
+add_filter('if_menu_conditions', 'add_menu_conditions' );
 add_action('wp_enqueue_scripts', 'sailhousing_add_css');
 add_action('wp_enqueue_scripts', 'sailhousing_add_js');
 add_action('widgets_init', 'sailhousing_init_widgets');
