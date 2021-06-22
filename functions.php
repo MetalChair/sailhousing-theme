@@ -52,17 +52,14 @@ function get_custom_logo_tag(){
     }
 }
 
-function add_menu_conditions( $conditions ) {
-    $conditions[] = array(
-        'name'    =>  'Is Logged In',
-        'condition' =>  function($item) {
-            return is_user_logged_in();
-        }
-    );
-    
-    return $conditions;
-}
-add_filter('if_menu_conditions', 'add_menu_conditions' );
+add_filter('wp_setup_nav_menu', function( \stdClass $item ) {
+    if ($item->title === "My Profile") {
+        $item->_invalid = !is_user_logged_in();
+    }
+
+    return $item;
+} );
+
 add_action('wp_enqueue_scripts', 'sailhousing_add_css');
 add_action('wp_enqueue_scripts', 'sailhousing_add_js');
 add_action('widgets_init', 'sailhousing_init_widgets');
