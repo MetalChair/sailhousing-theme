@@ -2,8 +2,7 @@
 .wp-block-button:not(.is-style-outline) > *{
     box-shadow: $box-shadow-d1;
     background: $sail-gradient;
-    color: #202020;
-
+    color: #FFFFFF;
 }
 .wp-block-button > *{
     transition: .4s cubic-bezier(0.075, 0.82, 0.165, 1);
