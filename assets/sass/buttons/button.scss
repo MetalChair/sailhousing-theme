@@ -1,7 +1,6 @@
 @import "../variables.scss";
 .wp-block-button:not(.is-style-outline) > *{
     box-shadow: $box-shadow-d1;
-    background: $sail-gradient;
     color: #FFFFFF;
 }
 .wp-block-button > *{
