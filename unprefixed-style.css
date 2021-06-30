@@ -276,7 +276,7 @@ ul .menu-item {
 
   .nav-margin {
     margin: 0;
-    justify-content: left;
+    justify-content: space-between;
   }
 
   .label-text {
@@ -501,18 +501,33 @@ footer {
   width: 100%;
 }
 
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 1024px) {
   .footer-content {
     flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
+    justify-content: center;
   }
 }
-.footer-content {
-  display: flex;
-  flex-direction: row;
-  margin-left: 5em;
-  margin-right: 5em;
-}
+@media only screen and (min-width: 1024px) {
+  .footer-content {
+    flex-direction: row;
+    margin-left: 5em;
+    margin-right: 5em;
+  }
 
+  .footer-content {
+    display: flex;
+  }
+
+  .col:first-child {
+    text-align: left;
+  }
+
+  .col:last-child {
+    text-align: right;
+  }
+}
 .footer-content > .col {
   flex-basis: 33%;
   flex-grow: 0;
@@ -521,14 +536,6 @@ footer {
   text-align: center;
   display: flex;
   flex-direction: column;
-}
-
-.col:first-child {
-  text-align: left;
-}
-
-.col:last-child {
-  text-align: right;
 }
 
 .footer-nav-items .menu-item {
