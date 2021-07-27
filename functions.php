@@ -51,6 +51,11 @@ function get_custom_logo_tag(){
             echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
     }
 }
+function remove_admin_bar() {
+    if (!current_user_can('administrator') && !is_admin()) {
+      show_admin_bar(false);
+    }
+}
 
 add_filter( 'wp_nav_menu_objects', function( array $items,  stdClass $args ) {
 
@@ -69,3 +74,4 @@ add_action('wp_enqueue_scripts', 'sailhousing_add_js');
 add_action('widgets_init', 'sailhousing_init_widgets');
 add_action('after_setup_theme', 'sailhousing_setup');
 add_action('after_setup_theme', 'sailhousing_setup_custom_logo');
+add_action('after_setup_theme', 'remove_admin_bar');
