@@ -7,7 +7,8 @@
 			;?>
 		</div>
 		<div class = "col">
-			<div>1669 Maple Road</div>
+			<div>c/o SAIL</div>
+			<div>1669 W Maple Road</div>
 			<div>Birmingham, MI 48009</div>
 		</div>
 		<div class = "col">
