@@ -8,7 +8,7 @@
 			<div>1669 W Maple Road</div>
 			<div>Birmingham, MI 48009</div>
 		</div>
-		<div class = "col" style="padding-left: 120px;">
+		<div class = "col">
 			<!--<?php
 				dynamic_sidebar( "footer-bar" )
 			;?>-->
