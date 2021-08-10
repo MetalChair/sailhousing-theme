@@ -69,6 +69,14 @@ add_filter( 'wp_nav_menu_objects', function( array $items,  stdClass $args ) {
 
 }, 10, 2 );
 
+// Makes it so we can access custom query params from urls (like when a user clicks a password reset link)
+function add_custom_query_params( $qvars ) {
+    $qvars[] = 'pw_reset_key';
+    $qvars[] = 'user_email';
+    return $qvars;
+}
+add_filter( 'query_vars', 'add_custom_query_params' );
+
 add_action('wp_enqueue_scripts', 'sailhousing_add_css');
 add_action('wp_enqueue_scripts', 'sailhousing_add_js');
 add_action('widgets_init', 'sailhousing_init_widgets');
