@@ -10,6 +10,11 @@ footer{
     }
 }
 @media only screen and (min-width : 1024px) {
+    .footer-nav-items .menu-item{
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
     .footer-content{
         flex-direction: row;
         margin-left: 5em;
