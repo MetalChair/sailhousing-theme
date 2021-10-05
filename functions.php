@@ -57,6 +57,38 @@ function remove_admin_bar() {
     }
 }
 
+// TODO: call this directly from the plugin
+function is_due_paying_member() {
+  if (!is_user_logged_in()) { return false; }
+  global $wpdb;
+
+  $userId = get_current_user_id();
+  $user_query = "SELECT * FROM `sail_users` WHERE userId = ";
+  $user_query .= $userId;
+
+  $sail_user = $wpdb->get_row($user_query);
+
+  if ($sail_user->isPaidMember) {
+    return true;
+  }
+  else if ($sail_user->familyId != null) {
+    $query = "SELECT * FROM `sail_users` WHERE familyId = ";
+    $query .= $sail_user->familyId;
+    $results = $wpdb->get_results($query);
+
+    foreach($results as $fm) {
+      if ($fm->userId != $sail_user->userId && $fm->isPaidMember) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+  else {
+    return false;
+  }
+}
+
 add_filter( 'wp_nav_menu_objects', function( array $items,  stdClass $args ) {
 
     return array_filter( $items, function( $item ) {
@@ -64,6 +96,7 @@ add_filter( 'wp_nav_menu_objects', function( array $items,  stdClass $args ) {
         if ($item->title === "Logout" && !is_user_logged_in()) return false;
         if ($item->title === "Login" && is_user_logged_in()) return false;
         if ($item->title === "Join SAIL" && is_user_logged_in()) return false;
+        if ($item->title === "Roadmap Resources" && !is_due_paying_member()) return false;
         return true;
     } );
 
