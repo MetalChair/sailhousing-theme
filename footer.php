@@ -2,6 +2,9 @@
 	<div class = "footer-content">
 		<div class = "col">
 			<a href="mailto:info@sailhousingsolutions.com">info@sailhousingsolutions.com</a>
+			<?php
+				dynamic_sidebar( "footer-bar" )
+			;?>
 		</div>
 		<div class = "col">
 			<div>c/o SAIL</div>
@@ -9,9 +12,7 @@
 			<div>Birmingham, MI 48009</div>
 		</div>
 		<div class = "col">
-			<!--<?php
-				dynamic_sidebar( "footer-bar" )
-			;?>-->
+
 			<?php
 				get_template_part( "template-parts/footer/footer", "menu");
 			;?>
