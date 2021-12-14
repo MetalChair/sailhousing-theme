@@ -1,7 +1,7 @@
 <footer>
 	<div class = "footer-content">
 		<div class = "col">
-			<a href="mailto:info@sailhousingsolutions.com">info@sailhousingsolutions.com</a>
+			<a href="mailto:info@sailhousingsolutions.org">info@sailhousingsolutions.org</a>
 			<?php
 				dynamic_sidebar( "footer-bar" )
 			;?>
