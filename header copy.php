@@ -1,5 +1,4 @@
-<?php
-/**
+<!--
  * The header for our theme
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
@@ -8,9 +7,8 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
- * @since Twenty Nineteen 1.0
- */
-?><!doctype html>
+ * @since Twenty Nineteen 1.0-->
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />

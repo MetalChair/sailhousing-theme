@@ -1,8 +1,5 @@
-<?php
-/**
- * Header for the sail housing solutions website
- */
-?><!doctype html>
+<!-- Header for the sail housing solutions website -->
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,9 +11,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Poppins&display=swap" rel="stylesheet">  
 
-	<?php wp_head(); ?>
+<?php wp_head(); ?>
 </head>
 <body <?php body_class("grid-container"); ?>>
 <?php wp_body_open(); ?>
-	<?php get_template_part( 'template-parts/header/nav' , 'menu'); ?>
+<?php get_template_part( 'template-parts/header/nav' , 'menu'); ?>
 
