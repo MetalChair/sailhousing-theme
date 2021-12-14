@@ -1,4 +1,3 @@
-<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com">
