@@ -1,5 +1,4 @@
 <?php
-echo "This is test";
 ?>
 <html>
 <head>
