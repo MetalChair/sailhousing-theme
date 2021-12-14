@@ -1,4 +1,3 @@
-<!-- Header for the sail housing solutions website -->
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
