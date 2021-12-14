@@ -1,3 +1,6 @@
+<?php
+echo "This is test";
+?>
 <html>
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com">
