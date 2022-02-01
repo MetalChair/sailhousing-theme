@@ -35,12 +35,18 @@ function get_meta_boxes( $screen = null, $context = 'advanced' ) {
 function remove_dashboard_widgets() {
     global $wp_meta_boxes;
   
-    $dashboard_normal_boxes = get_meta_boxes( 'dashboard', 'normal' );
-    $dashboard_side_boxes = get_meta_boxes( 'dashboard', 'side' );
-    debug_to_console($dashboard_normal_boxes);
-    debug_to_console($dashboard_side_boxes);
+    //$dashboard_normal_boxes = get_meta_boxes( 'dashboard', 'normal' );
+    //$dashboard_side_boxes = get_meta_boxes( 'dashboard', 'side' );
+    //debug_to_console($dashboard_normal_boxes);
+    //debug_to_console($dashboard_side_boxes);
 
-    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+    remove_menu_page( 'jetpack' );
+    unset($wp_meta_boxes['dashboard']['normal']['high']['bluehost-widget-container']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['jetpack_summary_widget']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['tribe_dashboard_widget']);
+
+
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
@@ -48,6 +54,7 @@ function remove_dashboard_widgets() {
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
     unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
     unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']); 
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
 }
 
 function sailhousing_setup_custom_logo(){
