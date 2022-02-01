@@ -11,9 +11,35 @@ if( !function_exists('sailhousing_setup')):
     }
 endif;
 
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
+function get_meta_boxes( $screen = null, $context = 'advanced' ) {
+    global $wp_meta_boxes;
+
+    if ( empty( $screen ) )
+        $screen = get_current_screen();
+    elseif ( is_string( $screen ) )
+        $screen = convert_to_screen( $screen );
+
+    $page = $screen->id;
+
+    return $wp_meta_boxes[$page][$context];          
+}
+
 function remove_dashboard_widgets() {
     global $wp_meta_boxes;
   
+    $dashboard_normal_boxes = get_meta_boxes( 'dashboard', 'normal' );
+    $dashboard_side_boxes = get_meta_boxes( 'dashboard', 'side' );
+    debug_to_console($dashboard_normal_boxes);
+    debug_to_console($dashboard_side_boxes);
+
     unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
@@ -129,6 +155,6 @@ add_action('after_setup_theme', 'sailhousing_setup');
 add_action('after_setup_theme', 'sailhousing_setup_custom_logo');
 add_action('after_setup_theme', 'remove_admin_bar');
 
-if (current_user_can('editor') || current_user_can('administrator')) {
+if (!current_user_can('editor')) {
     add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 }
