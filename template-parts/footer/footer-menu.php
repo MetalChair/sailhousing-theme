@@ -8,5 +8,4 @@
         'theme_location' => 'secondary',
         "fallback_cb" => false
     ));
- 
 ;?>

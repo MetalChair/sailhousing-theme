@@ -1,6 +1,4 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
 <div class = "body-container poppins">
 <div id= "main" class="body">
 <?php
@@ -21,6 +19,4 @@ get_template_part( 'template-parts/content/content', 'none' );
 ?>
 </div>
 </div>
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>
